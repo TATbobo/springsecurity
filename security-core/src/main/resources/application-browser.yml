@@ -4,9 +4,12 @@ spring:
     password: root
     url: jdbc:mysql://188.131.254.195/demo01?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false
     driver-class-name: com.mysql.jdbc.Driver
-  session:
-    store-type: none
-  redis:
-    timeout: 5000
-server:
-  port: 8082
+com:
+  tucker:
+    browser:
+      LoginPage: /login.html
+      loginType: REDIRECT
+    code:
+      image:
+        length: 4
+        url: /user
