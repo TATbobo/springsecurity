@@ -35,7 +35,8 @@ public class BrowserSecurityController {
     public SimpleResponse requireAuthentication(HttpServletRequest request , HttpServletResponse response) throws IOException {
         SavedRequest savedRequest = requestCache.getRequest(request,response);
         String requestAccept = request.getHeader("accept");
-        logger.info(requestAccept);
+        logger.info("accept========="+requestAccept);
+        /*logger.info("Content-Type================="+request.getContentType());*/
         String contentType = "text/html";
 
         if(savedRequest != null){

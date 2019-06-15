@@ -1,9 +1,8 @@
 package com.tucker.securitycore.tool;
 
-import com.tucker.securitycore.bean.ImageCode;
-
-import javax.servlet.http.HttpServletRequest;
+import com.tucker.securitycore.bean.ValidateCode;
+import org.springframework.web.context.request.ServletWebRequest;
 
 public interface ValidateCodeGenerator {
-    ImageCode createImageCode(HttpServletRequest request);
+    ValidateCode createCode(ServletWebRequest request);
 }

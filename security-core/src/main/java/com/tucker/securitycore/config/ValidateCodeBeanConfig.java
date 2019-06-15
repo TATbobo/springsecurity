@@ -1,6 +1,8 @@
 package com.tucker.securitycore.config;
 
 import com.tucker.securitycore.properties.SecurityProperties;
+import com.tucker.securitycore.sms.DefaultSmsCodeSender;
+import com.tucker.securitycore.sms.SmsCodeSender;
 import com.tucker.securitycore.tool.ImageCodeGenerator;
 import com.tucker.securitycore.tool.ValidateCodeGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,5 +22,11 @@ public class ValidateCodeBeanConfig {
         ImageCodeGenerator codeGenerator = new ImageCodeGenerator();
         codeGenerator.setSecurityProperties(securityProperties);
         return codeGenerator;
+    }
+
+    @Bean
+    @ConditionalOnMissingBean(SmsCodeSender.class)
+    public SmsCodeSender smsCodeGenerator(){
+        return new DefaultSmsCodeSender();
     }
 }

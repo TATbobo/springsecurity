@@ -7,4 +7,6 @@ import lombok.Data;
 public class ValidateCodeProperties {
 
     private ImageCodeProperties image = new ImageCodeProperties();
+
+    private SmsProperties sms = new SmsProperties();
 }
