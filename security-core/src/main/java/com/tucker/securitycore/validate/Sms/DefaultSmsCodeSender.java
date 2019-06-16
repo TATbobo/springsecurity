@@ -1,4 +1,6 @@
-package com.tucker.securitycore.sms;
+package com.tucker.securitycore.validate.Sms;
+
+import com.tucker.securitycore.validate.Sms.SmsCodeSender;
 
 public class DefaultSmsCodeSender implements SmsCodeSender {
     @Override

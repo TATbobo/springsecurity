@@ -1,6 +1,6 @@
 package com.tucker.securitycore.filter;
 
-import com.tucker.securitycore.bean.ImageCode;
+import com.tucker.securitycore.validate.image.ImageCode;
 import com.tucker.securitycore.controller.ValidateCodeController;
 import com.tucker.securitycore.exception.ValidateCodeException;
 import com.tucker.securitycore.properties.SecurityProperties;

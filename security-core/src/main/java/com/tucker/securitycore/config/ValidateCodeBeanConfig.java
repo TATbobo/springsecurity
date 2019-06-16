@@ -1,10 +1,10 @@
 package com.tucker.securitycore.config;
 
 import com.tucker.securitycore.properties.SecurityProperties;
-import com.tucker.securitycore.sms.DefaultSmsCodeSender;
-import com.tucker.securitycore.sms.SmsCodeSender;
-import com.tucker.securitycore.tool.ImageCodeGenerator;
-import com.tucker.securitycore.tool.ValidateCodeGenerator;
+import com.tucker.securitycore.validate.Sms.DefaultSmsCodeSender;
+import com.tucker.securitycore.validate.Sms.SmsCodeSender;
+import com.tucker.securitycore.validate.image.ImageCodeGenerator;
+import com.tucker.securitycore.validate.ValidateCodeGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
