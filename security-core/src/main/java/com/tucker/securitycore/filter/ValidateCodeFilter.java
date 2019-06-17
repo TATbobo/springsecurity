@@ -1,9 +1,10 @@
 package com.tucker.securitycore.filter;
 
-import com.tucker.securitycore.validate.image.ImageCode;
+
 import com.tucker.securitycore.controller.ValidateCodeController;
 import com.tucker.securitycore.exception.ValidateCodeException;
 import com.tucker.securitycore.properties.SecurityProperties;
+import com.tucker.securitycore.validate.image.ImageCode;
 import lombok.Data;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.InitializingBean;
@@ -57,14 +58,14 @@ public class ValidateCodeFilter extends OncePerRequestFilter implements Initiali
             if(antPathMatcher.match(url,httpServletRequest.getRequestURI())){
                 action = true;
             }
-        if(action /*&& StringUtils.equalsIgnoreCase(httpServletRequest.getMethod(),"post")*/){
-            try {
-                validate(new ServletWebRequest(httpServletRequest));
-            }catch (ValidateCodeException e){
-                authenticationFailureHandler.onAuthenticationFailure(httpServletRequest,httpServletResponse,e);
-                return;
+            if(action /*&& StringUtils.equalsIgnoreCase(httpServletRequest.getMethod(),"post")*/){
+                try {
+                    validate(new ServletWebRequest(httpServletRequest));
+                }catch (ValidateCodeException e){
+                    authenticationFailureHandler.onAuthenticationFailure(httpServletRequest,httpServletResponse,e);
+                    return;
+                }
             }
-        }
         }
         filterChain.doFilter(httpServletRequest,httpServletResponse);
     }
@@ -100,5 +101,4 @@ public class ValidateCodeFilter extends OncePerRequestFilter implements Initiali
         sessionStrategy.removeAttribute(request, ValidateCodeController.SESSION_KEY);
     }
 
-    }
-
+}

@@ -21,7 +21,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableWebSecurity
-public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
+class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private SecurityProperties securityProperties;
@@ -54,7 +54,7 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        ValidateCodeFilter validateCodeFilter = new ValidateCodeFilter();
+       ValidateCodeFilter validateCodeFilter = new com.tucker.securitycore.filter.ValidateCodeFilter();
         validateCodeFilter.setAuthenticationFailureHandler(loginFailHandler);
         validateCodeFilter.setSecurityProperties(securityProperties);
         validateCodeFilter.afterPropertiesSet();
@@ -72,7 +72,7 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
                 .userDetailsService(userDetailsService)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/authentication/require","/code/*",securityProperties.getBrowser().getLoginPage())
+                .antMatchers("/authentication/require","/code/image",securityProperties.getBrowser().getLoginPage())
                 .permitAll()
                 .anyRequest()
                 .authenticated()

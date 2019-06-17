@@ -24,9 +24,9 @@ import java.util.Map;
 @RestController
 public class ValidateCodeController {
 
-   /* public final static String SESSION_KEY = "SESSION_KEY_CODE";
+    public final static String SESSION_KEY = "SESSION_KEY_CODE";
 
-    @Autowired
+   /* @Autowired
     private ValidateCodeGenerator imageCodeGenerator;
 
     @Autowired

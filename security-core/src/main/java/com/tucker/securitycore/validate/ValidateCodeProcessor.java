@@ -8,6 +8,5 @@ public interface ValidateCodeProcessor {
 
     void create(ServletWebRequest request) throws Exception;
 
-
     void validate(ServletWebRequest request);
 }
