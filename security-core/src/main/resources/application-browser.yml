@@ -13,3 +13,5 @@ com:
       image:
         length: 4
         url: /user
+        width: 67
+        height: 23

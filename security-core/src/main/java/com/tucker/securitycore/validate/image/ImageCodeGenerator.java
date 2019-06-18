@@ -3,6 +3,7 @@ package com.tucker.securitycore.validate.image;
 import com.tucker.securitycore.properties.SecurityProperties;
 import com.tucker.securitycore.validate.ValidateCodeGenerator;
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.context.request.ServletWebRequest;
@@ -11,17 +12,19 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.Random;
 
-@Component
+@Component("imageValidateCodeGenerator")
 @Data
 public class ImageCodeGenerator implements ValidateCodeGenerator {
     private static final String IMAGE_WIDTH_NAME = "width";
     private static final String IMAGE_HEIGHT_NAME = "height";
     private static final Integer MAX_COLOR_VALUE = 255;
 
+    @Autowired
     private SecurityProperties securityProperties;
 
     @Override
     public ImageCode generator(ServletWebRequest request) {
+
         int width = ServletRequestUtils.getIntParameter(request.getRequest(), IMAGE_WIDTH_NAME, securityProperties.getCode().getImage().getWidth());
         int height = ServletRequestUtils.getIntParameter(request.getRequest(), IMAGE_HEIGHT_NAME, securityProperties.getCode().getImage().getHeight());
 

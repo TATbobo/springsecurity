@@ -2,6 +2,8 @@ package com.tucker.securitycore.validate;
 
 import com.tucker.securitycore.exception.ValidateCodeException;
 import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.social.connect.web.HttpSessionSessionStrategy;
 import org.springframework.social.connect.web.SessionStrategy;
@@ -46,7 +48,7 @@ public abstract class AbstractValidateCodeProcessor<C extends ValidateCode> impl
     @SuppressWarnings("unchecked")
     private C generate(ServletWebRequest request) {
         String type = getValidateCodeType(request).toString().toLowerCase();
-        String generatorName = type + ValidateCodeGenerator.class.getSimpleName();
+        String generatorName = type  + ValidateCodeGenerator.class.getSimpleName();
         ValidateCodeGenerator validateCodeGenerator = validateCodeGenerators.get(generatorName);
         if (validateCodeGenerator == null) {
             throw new ValidateCodeException("验证码生成器" + generatorName + "不存在");
@@ -97,7 +99,7 @@ public abstract class AbstractValidateCodeProcessor<C extends ValidateCode> impl
     @SuppressWarnings("unchecked")
     @Override
     public void validate(ServletWebRequest request) {
-
+        Logger logger = LoggerFactory.getLogger(getClass());
         ValidateCodeType processorType = getValidateCodeType(request);
         String sessionKey = getSessionKey(request);
 
@@ -112,6 +114,7 @@ public abstract class AbstractValidateCodeProcessor<C extends ValidateCode> impl
         }
 
         if (StringUtils.isBlank(codeInRequest)) {
+            logger.info("验证码的值不能为空");
             throw new ValidateCodeException(processorType + "验证码的值不能为空");
         }
 

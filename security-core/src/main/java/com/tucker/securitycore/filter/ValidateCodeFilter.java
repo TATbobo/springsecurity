@@ -1,20 +1,18 @@
 package com.tucker.securitycore.filter;
 
-
-import com.tucker.securitycore.controller.ValidateCodeController;
 import com.tucker.securitycore.exception.ValidateCodeException;
+import com.tucker.securitycore.properties.SecurityConstants;
 import com.tucker.securitycore.properties.SecurityProperties;
-import com.tucker.securitycore.validate.image.ImageCode;
+import com.tucker.securitycore.validate.ValidateCodeProcessorHolder;
+import com.tucker.securitycore.validate.ValidateCodeType;
+
 import lombok.Data;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
-import org.springframework.security.web.authentication.session.SessionAuthenticationStrategy;
-import org.springframework.social.connect.web.HttpSessionSessionStrategy;
-import org.springframework.social.connect.web.SessionStrategy;
+import org.springframework.stereotype.Component;
 import org.springframework.util.AntPathMatcher;
-import org.springframework.web.bind.ServletRequestBindingException;
-import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.context.request.ServletWebRequest;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -23,82 +21,110 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Data
+@Component("validateCodeFilter")
 public class ValidateCodeFilter extends OncePerRequestFilter implements InitializingBean {
-
-    private AuthenticationFailureHandler authenticationFailureHandler;
-
-    private SessionStrategy  sessionStrategy= new HttpSessionSessionStrategy();
-
-    private Set<String> urls = new HashSet<>();
-
+    /**
+     * 验证码校验失败处理器
+     */
+    @Autowired
+    private AuthenticationFailureHandler loginFailHandler;
+    /**
+     * 系统配置信息
+     */
+    @Autowired
     private SecurityProperties securityProperties;
+    /**
+     * 系统中的校验码处理器
+     */
+    @Autowired
+    private ValidateCodeProcessorHolder validateCodeProcessorHolder;
+    /**
+     * 存放所有需要校验验证码的url
+     */
+    private Map<String, ValidateCodeType> urlMap = new HashMap<>();
+    /**
+     * 验证请求url与配置的url是否匹配的工具类
+     */
+    private AntPathMatcher pathMatcher = new AntPathMatcher();
 
-    private final AntPathMatcher antPathMatcher = new AntPathMatcher();
-
-    private SessionAuthenticationStrategy sessionAuthenticationStrategy;
-
+    /**
+     * 初始化要拦截的url配置信息
+     */
     @Override
     public void afterPropertiesSet() throws ServletException {
         super.afterPropertiesSet();
-        String[] configUrls = StringUtils.splitByWholeSeparatorPreserveAllTokens(securityProperties.getCode().getImage().getUrl(), ",");
-        urls.addAll(Arrays.asList(configUrls));
+
+        urlMap.put(SecurityConstants.DEFAULT_LOGIN_PROCESSING_URL_FORM, ValidateCodeType.IMAGE);
+        addUrlToMap(securityProperties.getCode().getImage().getUrl(), ValidateCodeType.IMAGE);
+
+        urlMap.put(SecurityConstants.DEFAULT_LOGIN_PROCESSING_URL_MOBILE, ValidateCodeType.SMS);
+        addUrlToMap(securityProperties.getCode().getSms().getUrl(), ValidateCodeType.SMS);
+       /* System.out.println("==========="+validateCodeProcessorHolder.getA());*/
     }
 
-    @Override
-    protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain) throws ServletException, IOException {
-        boolean action = false;
-
-        for(String url:urls){
-
-            if(antPathMatcher.match(url,httpServletRequest.getRequestURI())){
-                action = true;
+    /**
+     * 将系统中配置的需要校验验证码的URL根据校验的类型放入map
+     *
+     * @param urlString
+     * @param type
+     */
+    protected void addUrlToMap(String urlString, ValidateCodeType type) {
+        if (StringUtils.isNotBlank(urlString)) {
+            String[] urls = StringUtils.splitByWholeSeparatorPreserveAllTokens(urlString, ",");
+            for (String url : urls) {
+                urlMap.put(url, type);
             }
-            if(action /*&& StringUtils.equalsIgnoreCase(httpServletRequest.getMethod(),"post")*/){
-                try {
-                    validate(new ServletWebRequest(httpServletRequest));
-                }catch (ValidateCodeException e){
-                    authenticationFailureHandler.onAuthenticationFailure(httpServletRequest,httpServletResponse,e);
-                    return;
+        }
+    }
+
+    /*
+     * (non-Javadoc)
+     *
+     * @see
+     * org.springframework.web.filter.OncePerRequestFilter#doFilterInternal(
+     * javax.servlet.http.HttpServletRequest,
+     * javax.servlet.http.HttpServletResponse, javax.servlet.FilterChain)
+     */
+    @Override
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
+            throws ServletException, IOException {
+        ValidateCodeType type = getValidateCodeType(request);
+        if (type != null) {
+            logger.info("校验请求(" + request.getRequestURI() + ")中的验证码,验证码类型" + type);
+            try {
+                validateCodeProcessorHolder.findValidateCodeProcessor(type)
+                        .validate(new ServletWebRequest(request, response));
+                logger.info("验证码校验通过");
+            } catch (ValidateCodeException exception) {
+                loginFailHandler.onAuthenticationFailure(request, response, exception);
+                return;
+            }
+        }
+
+        chain.doFilter(request, response);
+
+    }
+
+    /**
+     * 获取校验码的类型，如果当前请求不需要校验，则返回null
+     *
+     * @param request
+     * @return
+     */
+    private ValidateCodeType getValidateCodeType(HttpServletRequest request) {
+        ValidateCodeType result = null;
+        if (!StringUtils.equalsIgnoreCase(request.getMethod(), "get")) {
+            Set<String> urls = urlMap.keySet();
+            for (String url : urls) {
+                if (pathMatcher.match(url, request.getRequestURI())) {
+                    result = urlMap.get(url);
                 }
             }
         }
-        filterChain.doFilter(httpServletRequest,httpServletResponse);
-    }
-
-    private void validate(ServletWebRequest request) throws ServletRequestBindingException {
-        logger.info(request.getParameter("Username"));
-        logger.info(request.getParameter("Password"));
-        // 从session中获取图片验证码
-        ImageCode imageCodeInSession = (ImageCode) sessionStrategy.getAttribute(request, ValidateCodeController.SESSION_KEY);
-        // 从请求中获取用户填写的验证码
-        String imageCodeInRequest = ServletRequestUtils.getStringParameter(request.getRequest(),"imageCode");
-        System.out.println("================================"+ServletRequestUtils.getStringParameter(request.getRequest(),"imageCode"));
-        if (StringUtils.isBlank(imageCodeInRequest)) {
-            System.out.println("验证码为空");
-            throw new ValidateCodeException("验证码不能为空");
-        }
-        if (null == imageCodeInSession) {
-            System.out.println("验证码不存在");
-            throw new ValidateCodeException("验证码不存在");
-        }
-        if (imageCodeInSession.isExpired()) {
-            System.out.println("验证码已过期");
-            sessionStrategy.removeAttribute(request, ValidateCodeController.SESSION_KEY);
-            throw new ValidateCodeException("验证码已过期");
-        }
-        if (!StringUtils.equalsIgnoreCase(imageCodeInRequest, imageCodeInSession.getCode())) {
-            System.out.println("验证码不匹配");
-            throw new ValidateCodeException("验证码不匹配");
-        }
-        // 验证成功，删除session中的验证码
-        logger.info("验证码成功");
-        logger.info("登陆成功");
-        sessionStrategy.removeAttribute(request, ValidateCodeController.SESSION_KEY);
+        return result;
     }
 
 }

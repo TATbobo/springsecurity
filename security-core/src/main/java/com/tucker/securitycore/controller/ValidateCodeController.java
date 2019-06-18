@@ -30,7 +30,7 @@ public class ValidateCodeController {
     private ValidateCodeGenerator imageCodeGenerator;
 
     @Autowired
-    private ValidateCodeGenerator smsCodeGenerator;
+    private ValidateCodeGenerator SmsCodeGenerator;
 
     @Autowired
     private SmsCodeSender smsCodeSender;
@@ -46,7 +46,7 @@ public class ValidateCodeController {
 
     @GetMapping("/code/sms")
     public void createSmsCode(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletRequestBindingException {
-        ValidateCode smsCode= smsCodeGenerator.createCode(new ServletWebRequest(request));
+        ValidateCode smsCode= SmsCodeGenerator.createCode(new ServletWebRequest(request));
         sessionStrategy.setAttribute(new ServletWebRequest(request),SESSION_KEY,smsCode);
         String mobile = ServletRequestUtils.getRequiredStringParameter(request,"mobile");
         smsCodeSender.send(mobile,smsCode.getCode());
