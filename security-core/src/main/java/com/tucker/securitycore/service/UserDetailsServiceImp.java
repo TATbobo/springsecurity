@@ -20,10 +20,9 @@ public class UserDetailsServiceImp implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        logger.info("登录用户名============" + username);
+        logger.info("登录用户名=====" + username);
+        logger.info("密码=====" + "123");
         String password = passwordEncoder.encode("123");
-        System.out.println("密码=============" + password);
-        return new User(username,password,
-                AuthorityUtils.commaSeparatedStringToAuthorityList("admin"));
+        return new User(username,password, AuthorityUtils.commaSeparatedStringToAuthorityList("admin"));
     }
 }

@@ -49,5 +49,9 @@ public interface SecurityConstants {
 	 * session失效默认的跳转地址
 	 */
 	public static final String DEFAULT_SESSION_INVALID_URL = "/session/invalid";
+	/**
+	 * 注销URL
+	 */
+	public static final String DEFAULT_LOGOUT_URL = "/logout";
 
 }

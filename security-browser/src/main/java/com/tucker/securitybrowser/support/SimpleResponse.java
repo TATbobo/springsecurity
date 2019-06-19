@@ -1,4 +1,4 @@
-package com.tucker.securitycore.bean;
+package com.tucker.securitybrowser.support;
 
 import lombok.Data;
 

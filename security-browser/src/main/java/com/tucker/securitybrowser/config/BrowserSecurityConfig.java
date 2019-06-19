@@ -1,5 +1,6 @@
-package com.tucker.securitycore.config;
+package com.tucker.securitybrowser.config;
 
+import com.tucker.securitybrowser.authentication.TuckerLogoutSuccessHandler;
 import com.tucker.securitycore.authentication.AbstractChannelSecurityConfig;
 import com.tucker.securitycore.authentication.mobile.SmsCodeAuthenticationSecurityConfig;
 import com.tucker.securitycore.properties.SecurityConstants;
@@ -30,6 +31,9 @@ class BrowserSecurityConfig extends AbstractChannelSecurityConfig {
 
     @Autowired
     private UserDetailsService userDetailsService;
+
+    @Autowired
+    private TuckerLogoutSuccessHandler logoutSuccessHandler;
 
     @Autowired
     private ValidateCodeSecurityConfig validateCodeSecurityConfig;
@@ -64,12 +68,19 @@ class BrowserSecurityConfig extends AbstractChannelSecurityConfig {
                 .tokenValiditySeconds(securityProperties.getBrowser().getRememberMeSeconds())
                 .userDetailsService(userDetailsService)
                 .and()
+                .logout()
+                .logoutSuccessUrl(SecurityConstants.DEFAULT_LOGOUT_URL)
+                .logoutSuccessHandler(logoutSuccessHandler)
+                .deleteCookies("JSESSIONID")
+                .and()
                 .authorizeRequests()
                 .antMatchers(
                         securityProperties.getBrowser().getLoginPage(),
                         SecurityConstants.DEFAULT_UNAUTHENTICATION_URL,
                         SecurityConstants.DEFAULT_LOGIN_PROCESSING_URL_MOBILE,
-                        SecurityConstants.DEFAULT_VALIDATE_CODE_URL_PREFIX+"/*"
+                        SecurityConstants.DEFAULT_VALIDATE_CODE_URL_PREFIX+"/*",
+                        SecurityConstants.DEFAULT_LOGOUT_URL,
+                        securityProperties.getBrowser().getLogoutPage()
                                 )
                 .permitAll()
                 .anyRequest()
