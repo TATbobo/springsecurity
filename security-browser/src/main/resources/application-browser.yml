@@ -4,8 +4,8 @@ spring:
     password: root
     url: jdbc:mysql://188.131.254.195/demo01?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false
     driver-class-name: com.mysql.jdbc.Driver
-com:
-  tucker:
+tucker:
+  security:
     browser:
       LoginPage: /login.html
       loginType: REDIRECT

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-public class TestController {
+public class CoreTestController {
 
     @GetMapping("/test")
     public List<String> test(){

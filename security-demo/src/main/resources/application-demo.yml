@@ -8,5 +8,13 @@ spring:
     store-type: none
   redis:
     timeout: 5000
+
 server:
   port: 8081
+
+tucker:
+  security:
+    social:
+      qq:
+        app-id:
+        app-secret:

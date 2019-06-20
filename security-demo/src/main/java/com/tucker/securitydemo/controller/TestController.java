@@ -18,7 +18,7 @@ public class TestController {
         System.out.println(user);
         return user;
     }
-    @PostMapping
+    /*@PostMapping
     public User creat(@Valid @RequestBody User user,BindingResult errors){
         if(errors.hasErrors()){
             errors.getAllErrors().stream().forEach(error ->{
@@ -29,5 +29,5 @@ public class TestController {
         user.setId(1);
         System.out.println(user.getName());
         return user;
-    }
+    }*/
 }

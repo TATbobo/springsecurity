@@ -5,52 +5,59 @@
     <title>Title</title>
 </head>
 <body>
-    <h2>表单登录页</h2>
-    <form action="/authentication/form" method="post">
-        <table>
-            <tr>
-                <td>用户名:</td>
-                <td><input type="text" name="Username"></td>
-            </tr>
-            <tr>
-                <td>密码:</td>
-                <td><input type="password" name="Password"></td>
-            </tr>
-            <tr>
-                <td>图形验证码:</td>
-                <td>
-                    <input type="text" name="imageCode">
-                    <img src="/code/image">
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2"><input name="remember-me" type="checkbox" value="true">记住我</input> </td>
-            </tr>
-            <tr>
-                <td colspan="2"><button type="submit">登录</button> </td>
-            </tr>
-        </table>
-    </form>
-    <form action="/authentication/mobile" method="post">
-        <table>
-            <tr>
-                <td>手机号:</td>
-                <td><input type="text" name="mobile" value="123456789"></td>
-            </tr>
-            <tr>
-                <td>验证码:</td>
-                <td>
-                    <input type="text" name="smsCode">
-                    <a href="/code/sms?mobile=123456789"/>点击获取验证码:
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2"><button type="submit">登录</button> </td>
-            </tr>
-        </table>
-    </form>
-<form  action="/logout" method="post">
+<h2>表单登录页</h2>
+<form action="/authentication/form" method="post">
+    <table>
+        <tr>
+            <td>用户名:</td>
+            <td><input type="text" name="Username"></td>
+        </tr>
+        <tr>
+            <td>密码:</td>
+            <td><input type="password" name="Password"></td>
+        </tr>
+        <tr>
+            <td>图形验证码:</td>
+            <td>
+                <input type="text" name="imageCode">
+                <img src="/code/image">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><input name="remember-me" type="checkbox" value="true">记住我</input> </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit">登录</button>
+            </td>
+        </tr>
+    </table>
+</form>
+<form action="/authentication/mobile" method="post">
+    <table>
+        <tr>
+            <td>手机号:</td>
+            <td><input type="text" name="mobile" value="123456789"></td>
+        </tr>
+        <tr>
+            <td>验证码:</td>
+            <td>
+                <input type="text" name="smsCode">
+                <a href="/code/sms?mobile=123456789"/>点击获取验证码:
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit">登录</button>
+            </td>
+        </tr>
+    </table>
+</form>
+<form action="/logout" method="post">
     <button type="submit">注销</button>
 </form>
+
+<h3>社交登录</h3>
+    <a href="/auth/qq">QQ登录</a>
 </body>
 </html>
