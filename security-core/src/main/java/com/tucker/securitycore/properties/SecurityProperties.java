@@ -2,8 +2,12 @@ package com.tucker.securitycore.properties;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySources;
+import org.springframework.stereotype.Component;
 
 @Data
+@Component("securityProperties")
 @ConfigurationProperties(prefix = "tucker.security")
 public class SecurityProperties {
 
@@ -11,5 +15,6 @@ public class SecurityProperties {
 
     private ValidateCodeProperties code = new ValidateCodeProperties();
 
-    private SocialProperties social = new SocialProperties();
+    private MySocialProperties social = new MySocialProperties();
+
 }

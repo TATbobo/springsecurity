@@ -1,0 +1,13 @@
+spring:
+  profiles: core
+
+tucker:
+  security:
+    code:
+      sms:
+        length: 5
+        expireIn: 61
+        url: /test
+  social:
+    app-id:
+    app-secret:

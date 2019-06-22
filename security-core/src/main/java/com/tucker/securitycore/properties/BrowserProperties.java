@@ -12,7 +12,7 @@ public class BrowserProperties {
     /**
      * 默认登出页面
      */
-    private String LogoutPage = "";
+    private String LogoutPage = "/logout.html";
     /**
      * 默认登录格式
      */
@@ -21,6 +21,5 @@ public class BrowserProperties {
      * 默认RememberMe时间
      */
     private int rememberMeSeconds = 3600;
-
 
 }

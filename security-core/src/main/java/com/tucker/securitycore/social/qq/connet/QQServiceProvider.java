@@ -6,7 +6,7 @@ import org.springframework.social.oauth2.AbstractOAuth2ServiceProvider;
 import org.springframework.social.oauth2.OAuth2Operations;
 import org.springframework.social.oauth2.OAuth2Template;
 
-public class QQSericeProvider extends AbstractOAuth2ServiceProvider<QQ> {
+public class QQServiceProvider extends AbstractOAuth2ServiceProvider<QQ> {
 
     private String appId;
 
@@ -14,7 +14,7 @@ public class QQSericeProvider extends AbstractOAuth2ServiceProvider<QQ> {
 
     private static final String URL_ACCESS_TOKEN = "https://graph.qq.com/oauth2.0/token";
 
-    public QQSericeProvider(String appId,String appSecret) {
+    public QQServiceProvider(String appId, String appSecret) {
         super(new OAuth2Template(appId,appSecret,URL_AUTHORIZE,URL_ACCESS_TOKEN));
     }
 

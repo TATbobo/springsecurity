@@ -1,6 +1,7 @@
 package com.tucker.securitycore;
 
-import com.tucker.securitycore.validate.ValidateCodeProcessorHolder;
+
+import com.tucker.securitycore.properties.SecurityProperties;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,11 +13,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class SecurityCoreApplicationTests {
 
     @Autowired
-    ValidateCodeProcessorHolder validateCodeProcessorHolder;
+    private SecurityProperties securityProperties;
 
     @Test
     public void contextLoads() {
-        System.out.println(validateCodeProcessorHolder.getA());
+        System.out.println(securityProperties.getCode().getSms().getLength());
     }
 
 }

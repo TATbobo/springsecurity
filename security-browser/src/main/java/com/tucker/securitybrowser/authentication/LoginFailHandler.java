@@ -24,11 +24,8 @@ public class LoginFailHandler extends SimpleUrlAuthenticationFailureHandler {
     @Autowired
     private ObjectMapper objectMapper;
 
-    private final SecurityProperties securityProperties;
-
-    public LoginFailHandler(SecurityProperties securityProperties) {
-        this.securityProperties = securityProperties;
-    }
+    @Autowired
+    private SecurityProperties securityProperties;
 
     @Override
     public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {

@@ -3,7 +3,7 @@ package com.tucker.securitycore.properties;
 import lombok.Data;
 
 @Data
-public class SocialProperties {
-
-    private QQProperties qq = new QQProperties();
+public abstract class SocialProperties {
+    private String appId;
+    private String appSecret;
 }

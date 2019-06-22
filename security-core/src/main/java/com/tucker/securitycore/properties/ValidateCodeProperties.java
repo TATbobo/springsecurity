@@ -1,6 +1,5 @@
 package com.tucker.securitycore.properties;
 
-
 import lombok.Data;
 
 @Data
@@ -8,5 +7,6 @@ public class ValidateCodeProperties {
 
     private ImageCodeProperties image = new ImageCodeProperties();
 
-    private SmsProperties sms = new SmsProperties();
+    private SmsCodeProperties sms = new SmsCodeProperties();
+
 }

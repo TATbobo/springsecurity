@@ -12,12 +12,12 @@ import org.springframework.security.web.authentication.logout.LogoutSuccessHandl
 @Configuration
 public class BrowserSecurityBeanConfig {
 
-    @Autowired
-    private SecurityProperties securityProperties;
+   /* @Autowired
+    private SecurityProperties securityProperties;*/
 
-    @Bean
+    /*@Bean
     @ConditionalOnMissingBean(LogoutSuccessHandler.class)
     public LogoutSuccessHandler logoutSuccessHandler(){
         return new TuckerLogoutSuccessHandler(securityProperties.getBrowser().getLogoutPage());
-    }
+    }*/
 }
