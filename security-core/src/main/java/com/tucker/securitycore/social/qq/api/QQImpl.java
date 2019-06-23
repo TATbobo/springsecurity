@@ -45,6 +45,7 @@ public class QQImpl extends AbstractOAuth2ApiBinding implements QQ{
         logger.info(result);
 
         try {
+            url.getClass().newInstance();
             return objectMapper.readValue(result,QQUserInfo.class);
         } catch (Exception e) {
            throw new RuntimeException("获取用户信息失败");

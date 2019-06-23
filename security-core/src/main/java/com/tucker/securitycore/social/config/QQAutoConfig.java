@@ -21,7 +21,6 @@ public class QQAutoConfig  extends SocialConfigurerAdapter {
     @Autowired
     private SecurityProperties securityProperties;
 
-
     public ConnectionFactory<?> createConnectionFactory() {
         QQProperties qqConfig = securityProperties.getSocial().getQq();
         return new QQConnectionFactory(qqConfig.getProviderId(),qqConfig.getAppId(),qqConfig.getAppSecret());
@@ -32,8 +31,4 @@ public class QQAutoConfig  extends SocialConfigurerAdapter {
         configurer.addConnectionFactory(createConnectionFactory());
     }
 
-    @Override
-    public UsersConnectionRepository getUsersConnectionRepository(ConnectionFactoryLocator connectionFactoryLocator) {
-        return null;
-    }
 }

@@ -1,6 +1,6 @@
 spring:
   profiles:
-    include: core,browser
+    active: core,browser
 
   datasource:
     username: root

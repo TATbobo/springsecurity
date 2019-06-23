@@ -34,6 +34,7 @@ public class UserDetailsServiceImp implements UserDetailsService, SocialUserDeta
 
     private SocialUserDetails buildUserDetails(String userId) {
         String password = passwordEncoder.encode("123");
+        //从数据库中查出用户信息
         logger.info("数据库密码====="+password);
         return new SocialUser(userId,password, AuthorityUtils.commaSeparatedStringToAuthorityList("admin"));
     }
