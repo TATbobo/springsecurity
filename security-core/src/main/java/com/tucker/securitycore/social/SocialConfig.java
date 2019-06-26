@@ -1,5 +1,6 @@
 package com.tucker.securitycore.social;
 
+import com.tucker.securitycore.properties.SecurityProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,6 +23,12 @@ public class SocialConfig extends SocialConfigurerAdapter {
     @Autowired
     private DataSource dataSource;
 
+    @Autowired
+    private SecurityProperties securityProperties;
+
+    @Autowired(required = false)
+    private ConnectionSinUp connectionSinUp;
+
     @Override
     public UserIdSource getUserIdSource() {
         return new SessionUserIdSource();
@@ -31,12 +38,17 @@ public class SocialConfig extends SocialConfigurerAdapter {
     public UsersConnectionRepository getUsersConnectionRepository(ConnectionFactoryLocator connectionFactoryLocator) {
         JdbcUsersConnectionRepository repository = new JdbcUsersConnectionRepository(dataSource, connectionFactoryLocator, Encryptors.noOpText());
         repository.setTablePrefix("tucker_");
+        if(connectionSinUp != null){
+            repository.setConnectionSignUp(connectionSinUp);
+        }
         return repository;
     }
 
     @Bean
     public SpringSocialConfigurer tuckerSocialSecurityConfig() {
-        return new SpringSocialConfigurer();
+        String filterProcessesUrl = securityProperties.getSocial().getFilterProcessesUrl();
+        TuckerSpringSocialConfigurer tuckerSpringSocialConfigurer = new TuckerSpringSocialConfigurer(filterProcessesUrl);
+        return tuckerSpringSocialConfigurer;
     }
 }
 

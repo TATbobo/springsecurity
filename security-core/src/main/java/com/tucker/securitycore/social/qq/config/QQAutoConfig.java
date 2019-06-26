@@ -1,4 +1,4 @@
-package com.tucker.securitycore.social.config;
+package com.tucker.securitycore.social.qq.config;
 
 import com.tucker.securitycore.properties.QQProperties;
 import com.tucker.securitycore.properties.SecurityProperties;
@@ -11,8 +11,6 @@ import org.springframework.core.env.Environment;
 import org.springframework.social.config.annotation.ConnectionFactoryConfigurer;
 import org.springframework.social.config.annotation.SocialConfigurerAdapter;
 import org.springframework.social.connect.ConnectionFactory;
-import org.springframework.social.connect.ConnectionFactoryLocator;
-import org.springframework.social.connect.UsersConnectionRepository;
 
 @Configuration
 @ConditionalOnProperty(prefix = "tucker.security.social.qq",name = "app-id")

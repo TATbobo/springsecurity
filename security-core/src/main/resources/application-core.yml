@@ -9,5 +9,11 @@ tucker:
         expireIn: 61
         url: /test
   social:
-    app-id:
-    app-secret:
+    qq:
+      app-id:
+      app-secret:
+      providerId: /callback.do
+    weiChat:
+      app-id:
+      app-secret:
+    filterProcessesUrl: /qqLogin
