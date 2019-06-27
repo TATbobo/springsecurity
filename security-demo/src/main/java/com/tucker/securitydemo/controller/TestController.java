@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-@RestController
-@RequestMapping("/user")
+@RestController()
+@RequestMapping("/test")
 public class TestController {
 
-    @GetMapping
+    @GetMapping("/user")
     public User getUser(){
         User user = new User();
         user.setName("a");

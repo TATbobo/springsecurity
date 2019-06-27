@@ -21,5 +21,8 @@ public class BrowserProperties {
      * 默认RememberMe时间
      */
     private int rememberMeSeconds = 3600;
-
+    /**
+     * 默认注册页面
+     */
+    private String SignUpUrl = "/user/register";
 }
