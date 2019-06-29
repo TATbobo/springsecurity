@@ -22,6 +22,5 @@ public class UserController {
         String userId = user.getName();
         providerSignInUtils.doPostSignUp(userId,new ServletWebRequest(request));
     }
-    @GetMapping("/connect")
-    public void  s(){}
+
 }

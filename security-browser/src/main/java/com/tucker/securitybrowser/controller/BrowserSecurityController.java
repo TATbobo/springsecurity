@@ -7,6 +7,7 @@ import com.tucker.securitycore.properties.SecurityProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.web.DefaultRedirectStrategy;
 import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.savedrequest.HttpSessionRequestCache;
@@ -16,6 +17,7 @@ import org.springframework.social.connect.Connection;
 import org.springframework.social.connect.web.ProviderSignInUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.ServletWebRequest;
 
@@ -64,5 +66,21 @@ public class BrowserSecurityController {
         userInfo.setHeadImg(connection.getImageUrl());
         userInfo.setNickname(connection.getDisplayName());
         return userInfo;
+    }
+
+    @GetMapping("/session/invalid")
+    @ResponseStatus(code = HttpStatus.UNAUTHORIZED)
+    public SimpleResponse sessionInvalid(HttpServletRequest request , HttpServletResponse response) throws IOException {
+        SavedRequest savedRequest = requestCache.getRequest(request,response);
+        String requestAccept = request.getHeader("accept");
+        String contentType = "text/html";
+
+        if(savedRequest != null){
+            String targetUrl = savedRequest.getRedirectUrl();
+            if(requestAccept.contains(contentType)){
+                redirectStrategy.sendRedirect(request,response,securityProperties.getBrowser().getLoginPage());
+            }
+        }
+        return new SimpleResponse("登录已过期，请重新登录");
     }
 }

@@ -2,20 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f35ba03-43b9-4222-bc80-9d03d9ca35bb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/security-browser/src/main/java/com/tucker/securitybrowser/support/SocialUserInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-browser/src/main/resources/static/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/view/tuckerConnectionStatusView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-demo/src/main/java/com/tucker/securitydemo/controller/MyConnectController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-demo/src/main/java/com/tucker/securitydemo/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-demo/src/main/resources/static/connect/status.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-browser/src/main/java/com/tucker/securitybrowser/session/TuckerExpiredSessionStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-browser/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/security-browser/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/security-browser/src/main/java/com/tucker/securitybrowser/config/BrowserSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-browser/src/main/java/com/tucker/securitybrowser/config/BrowserSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/security-browser/src/main/java/com/tucker/securitybrowser/controller/BrowserSecurityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-browser/src/main/java/com/tucker/securitybrowser/controller/BrowserSecurityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/properties/BrowserProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/properties/BrowserProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/social/ConnectionSinUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-demo/src/main/java/com/tucker/securitydemo/config/MyConnectionSinUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/social/SocialConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/social/SocialConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-browser/src/main/resources/application-browser.yml" beforeDir="false" afterPath="$PROJECT_DIR$/security-browser/src/main/resources/application-browser.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/security-core/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/properties/SmsCodeProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/properties/SmsCodeProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/validate/ValidateCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/validate/ValidateCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/validate/imp/AbstractValidateCodeProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/validate/imp/AbstractValidateCodeProcessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/security-core/src/main/resources/application-core.yml" beforeDir="false" afterPath="$PROJECT_DIR$/security-core/src/main/resources/application-core.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/security-demo/src/main/java/com/tucker/securitydemo/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-demo/src/main/java/com/tucker/securitydemo/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-demo/src/main/java/com/tucker/securitydemo/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-demo/src/main/java/com/tucker/securitydemo/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-demo/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/security-demo/src/main/resources/application.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -49,11 +49,59 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/social/spring-social-core/1.1.6.RELEASE/spring-social-core-1.1.6.RELEASE.jar!/org/springframework/social/connect/ConnectionRepository.class">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/security-browser/src/main/java/com/tucker/securitybrowser/config/BrowserSecurityConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="11" column="50" lean-forward="true" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+            <state relative-caret-position="74">
+              <caret line="61" column="13" lean-forward="true" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/security-demo/src/main/java/com/tucker/securitydemo/controller/TestController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="32">
+              <caret line="16" column="26" lean-forward="true" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/properties/ValidateCodeProperties.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/security-browser/src/main/java/com/tucker/securitybrowser/session/TuckerExpiredSessionStrategy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="43" lean-forward="true" selection-start-column="43" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/security-demo/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="1" column="11" lean-forward="true" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/security-browser/src/main/java/com/tucker/securitybrowser/controller/BrowserSecurityController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="71" column="51" selection-start-line="71" selection-start-column="51" selection-end-line="71" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -103,16 +151,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/properties/SmsCodeProperties.java" />
-        <option value="$PROJECT_DIR$/security-core/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/security-browser/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/security-demo/src/main/java/com/tucker/securitydemo/SecurityDemoApplication.java" />
-        <option value="$PROJECT_DIR$/security-demo/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/security-core/pom.xml" />
-        <option value="$PROJECT_DIR$/security-browser/src/main/resources/application-browser.yml" />
-        <option value="$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/controller/CoreTestController.java" />
         <option value="$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/properties/SecurityConstants.java" />
-        <option value="$PROJECT_DIR$/security-demo/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/config/SecurityCoreConfig.java" />
         <option value="$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/social/qq/api/QQImpl.java" />
         <option value="$PROJECT_DIR$/security-demo/src/main/java/com/tucker/securitydemo/service/UserDetailsServiceImp.java" />
@@ -141,19 +180,28 @@
         <option value="$PROJECT_DIR$/security-browser/src/main/resources/static/register.html" />
         <option value="$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/properties/BrowserProperties.java" />
         <option value="$PROJECT_DIR$/security-browser/src/main/java/com/tucker/securitybrowser/support/SocialUserInfo.java" />
-        <option value="$PROJECT_DIR$/security-browser/src/main/java/com/tucker/securitybrowser/controller/BrowserSecurityController.java" />
-        <option value="$PROJECT_DIR$/security-browser/src/main/java/com/tucker/securitybrowser/config/BrowserSecurityConfig.java" />
         <option value="$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/social/SocialConfig.java" />
         <option value="$PROJECT_DIR$/security-demo/src/main/java/com/tucker/securitydemo/config/ConnectionSinUp.java" />
         <option value="$PROJECT_DIR$/security-demo/src/main/java/com/tucker/securitydemo/config/MyConnectionSinUp.java" />
         <option value="$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/tuckerConnectionStatusView.java" />
-        <option value="$PROJECT_DIR$/security-demo/src/main/java/com/tucker/securitydemo/controller/TestController.java" />
         <option value="$PROJECT_DIR$/security-demo/src/main/resources/static/connect/status.html" />
-        <option value="$PROJECT_DIR$/security-demo/src/main/java/com/tucker/securitydemo/controller/UserController.java" />
         <option value="$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/view/tuckerConnectionStatusView.java" />
-        <option value="$PROJECT_DIR$/security-core/src/main/resources/application-core.yml" />
         <option value="$PROJECT_DIR$/security-demo/src/main/java/com/tucker/securitydemo/controller/MyConnectController.java" />
         <option value="$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/social/MyJdbcConnectionRepositry.java" />
+        <option value="$PROJECT_DIR$/security-core/pom.xml" />
+        <option value="$PROJECT_DIR$/security-browser/src/main/resources/application-browser.yml" />
+        <option value="$PROJECT_DIR$/security-core/src/main/resources/application-core.yml" />
+        <option value="$PROJECT_DIR$/security-browser/pom.xml" />
+        <option value="$PROJECT_DIR$/security-browser/src/main/java/com/tucker/securitybrowser/controller/BrowserSecurityController.java" />
+        <option value="$PROJECT_DIR$/security-browser/src/main/java/com/tucker/securitybrowser/session/tuckerExpriedSessionStrategy.java" />
+        <option value="$PROJECT_DIR$/security-browser/src/main/java/com/tucker/securitybrowser/config/BrowserSecurityConfig.java" />
+        <option value="$PROJECT_DIR$/security-demo/src/main/java/com/tucker/securitydemo/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/properties/SmsCodeProperties.java" />
+        <option value="$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/validate/ValidateCode.java" />
+        <option value="$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/validate/imp/AbstractValidateCodeProcessor.java" />
+        <option value="$PROJECT_DIR$/security-demo/src/main/java/com/tucker/securitydemo/controller/TestController.java" />
+        <option value="$PROJECT_DIR$/security-browser/src/main/java/com/tucker/securitybrowser/session/TuckerExpiredSessionStrategy.java" />
+        <option value="$PROJECT_DIR$/security-demo/src/main/resources/application.yml" />
       </list>
     </option>
   </component>
@@ -181,11 +229,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-63" />
-    <option name="y" value="22" />
-    <option name="width" value="1943" />
-    <option name="height" value="1007" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="448" />
+    <option name="y" value="145" />
+    <option name="width" value="1377" />
+    <option name="height" value="833" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -195,6 +243,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -305,15 +354,6 @@
             <path>
               <item name="springsecurity01" type="b2602c69:ProjectViewProjectNode" />
               <item name="springsecurity01" type="462c0819:PsiDirectoryNode" />
-              <item name="security-browser" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springsecurity01" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springsecurity01" type="462c0819:PsiDirectoryNode" />
               <item name="security-core" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -389,7 +429,44 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="tucker" type="462c0819:PsiDirectoryNode" />
               <item name="securitycore" type="462c0819:PsiDirectoryNode" />
+              <item name="properties" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springsecurity01" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springsecurity01" type="462c0819:PsiDirectoryNode" />
+              <item name="security-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="tucker" type="462c0819:PsiDirectoryNode" />
+              <item name="securitycore" type="462c0819:PsiDirectoryNode" />
               <item name="social" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springsecurity01" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springsecurity01" type="462c0819:PsiDirectoryNode" />
+              <item name="security-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="tucker" type="462c0819:PsiDirectoryNode" />
+              <item name="securitycore" type="462c0819:PsiDirectoryNode" />
+              <item name="validate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springsecurity01" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springsecurity01" type="462c0819:PsiDirectoryNode" />
+              <item name="security-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="tucker" type="462c0819:PsiDirectoryNode" />
+              <item name="securitycore" type="462c0819:PsiDirectoryNode" />
+              <item name="validate" type="462c0819:PsiDirectoryNode" />
+              <item name="imp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="springsecurity01" type="b2602c69:ProjectViewProjectNode" />
@@ -513,7 +590,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -585,7 +661,7 @@
         </RuleState>
       </list>
     </option>
-    <option name="contentProportion" value="0.037568305" />
+    <option name="contentProportion" value="0.20081967" />
   </component>
   <component name="RunManager" selected="Spring Boot.SecurityDemoApplication">
     <configuration name="SecurityAppApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -690,9 +766,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SecurityDemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <configuration name="SecurityDemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" singleton="false">
       <module name="security-demo" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.tucker.securitydemo.SecurityDemoApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -772,6 +849,7 @@
       <workItem from="1561617858789" duration="523000" />
       <workItem from="1561618458902" duration="10913000" />
       <workItem from="1561639865692" duration="8156000" />
+      <workItem from="1561791482343" duration="5244000" />
     </task>
     <task id="LOCAL-00001" summary="mavenspringboot多模块项目打包及依赖,JUnit4单元测试">
       <created>1559658378689</created>
@@ -886,12 +964,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="231291000" />
+    <option name="totallyTimeSpent" value="236535000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-50" y="18" width="1554" height="805" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="878" extended-state="7" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49557522" visible="true" weight="0.27272728" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49557522" visible="true" weight="0.230563" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="JRebel" order="3" sideWeight="0.50442475" side_tool="true" weight="0.2371134" />
@@ -911,13 +989,13 @@
       <window_info anchor="bottom" id="JRebel remote servers log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50189036" side_tool="true" weight="0.33472222" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.53965783" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.35656837" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.3297587" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.308311" />
       <window_info anchor="bottom" id="Terminal" order="15" />
       <window_info anchor="bottom" id="JRebel Executor" order="16" />
-      <window_info anchor="bottom" x="22" y="244" width="1492" height="376" id="Run Dashboard" order="17" sideWeight="0.49810964" visible="true" weight="0.51411587" />
+      <window_info active="true" anchor="bottom" x="22" y="244" width="1492" height="376" id="Run Dashboard" order="17" sideWeight="0.49810964" visible="true" weight="0.86327076" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.22252011" />
@@ -930,7 +1008,7 @@
       <window_info anchor="right" id="Bean Validation" order="9" weight="0.32908705" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49557522" visible="true" weight="0.17024128" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49557522" visible="true" weight="0.5019763" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="JRebel" order="3" sideWeight="0.50442475" side_tool="true" weight="0.2371134" />
@@ -950,16 +1028,16 @@
       <window_info anchor="bottom" id="JRebel remote servers log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50189036" side_tool="true" weight="0.33472222" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.53965783" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.35724333" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.3297587" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.308311" />
       <window_info anchor="bottom" id="Terminal" order="15" />
       <window_info anchor="bottom" id="JRebel Executor" order="16" />
-      <window_info anchor="bottom" x="22" y="244" width="1492" height="376" id="Run Dashboard" order="17" sideWeight="0.49810964" visible="true" weight="0.39544237" />
+      <window_info anchor="bottom" x="22" y="244" width="1492" height="376" id="Run Dashboard" order="17" sideWeight="0.49810964" visible="true" weight="0.34739804" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info active="true" anchor="right" content_ui="combo" id="Hierarchy" order="2" visible="true" weight="0.22252011" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.22252011" />
       <window_info anchor="right" id="Maven" order="3" weight="0.38873994" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
@@ -998,12 +1076,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/validate/imp/AbstractValidateCodeProcessor.java</url>
-          <line>65</line>
-          <properties />
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>jar://$MAVEN_REPOSITORY$/org/springframework/social/spring-social-web/1.1.6.RELEASE/spring-social-web-1.1.6.RELEASE.jar!/org/springframework/social/connect/web/ConnectController.class</url>
           <line>118</line>
           <properties />
@@ -1040,157 +1112,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/security-demo/src/main/java/com/tucker/securitydemo/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/security-demo/src/main/java/com/tucker/securitydemo/controller/TestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/properties/BrowserProperties.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/security-core/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-684" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/security-core/src/main/resources/application-core.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/view/tuckerConnectionStatusView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/zaxxer/HikariCP/2.7.9/HikariCP-2.7.9.jar!/com/zaxxer/hikari/pool/ProxyPreparedStatement.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-jdbc/5.0.12.RELEASE/spring-jdbc-5.0.12.RELEASE.jar!/org/springframework/jdbc/core/PreparedStatementCallback.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.47/mysql-connector-java-5.1.47.jar!/com/mysql/jdbc/PreparedStatement.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1121">
-          <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/javax/sql/DataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="76" column="17" selection-start-line="76" selection-start-column="17" selection-end-line="76" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/social/spring-social-core/1.1.6.RELEASE/spring-social-core-1.1.6.RELEASE.jar!/org/springframework/social/connect/ConnectionFactoryLocator.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.0.12.RELEASE/spring-core-5.0.12.RELEASE.jar!/org/springframework/util/ReflectionUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="227" selection-start-line="227" selection-end-line="227" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.0.12.RELEASE/spring-aop-5.0.12.RELEASE.jar!/org/springframework/aop/framework/JdkDynamicAopProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="142" selection-start-line="142" selection-end-line="142" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.0.12.RELEASE/spring-aop-5.0.12.RELEASE.jar!/org/springframework/aop/framework/ReflectiveMethodInvocation.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.0.12.RELEASE/spring-aop-5.0.12.RELEASE.jar!/org/springframework/aop/framework/AdvisedSupport.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="354" selection-start-line="354" selection-end-line="354" />
-          <folding>
-            <element signature="e#4666#4667#0" expanded="true" />
-            <element signature="e#4706#4707#0" expanded="true" />
-            <element signature="e#14640#14641#0" expanded="true" />
-            <element signature="e#14684#14685#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.0.12.RELEASE/spring-aop-5.0.12.RELEASE.jar!/org/springframework/aop/framework/DefaultAdvisorChainFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.0.12.RELEASE/spring-aop-5.0.12.RELEASE.jar!/org/springframework/aop/framework/adapter/GlobalAdvisorAdapterRegistry.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#439#440#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.0.12.RELEASE/spring-aop-5.0.12.RELEASE.jar!/org/springframework/aop/support/DefaultIntroductionAdvisor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="109" selection-start-line="109" selection-end-line="109" />
-          <folding>
-            <element signature="e#3486#3487#0" expanded="true" />
-            <element signature="e#3513#3514#0" expanded="true" />
-            <element signature="e#3586#3587#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.0.12.RELEASE/spring-aop-5.0.12.RELEASE.jar!/org/springframework/aop/target/SimpleBeanTargetSource.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.0.12.RELEASE/spring-aop-5.0.12.RELEASE.jar!/org/springframework/aop/target/AbstractBeanFactoryBasedTargetSource.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
@@ -1226,23 +1147,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
           <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/security-browser/src/main/java/com/tucker/securitybrowser/config/BrowserSecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="54" column="21" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/security-demo/src/main/java/com/tucker/securitydemo/controller/MyConnectController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1417,13 +1321,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/social/MyJdbcConnectionRepositry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="54" lean-forward="true" selection-start-line="3" selection-start-column="54" selection-end-line="3" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/social/MyJdbcConnectionRepositry.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/social/spring-social-core/1.1.6.RELEASE/spring-social-core-1.1.6.RELEASE.jar!/org/springframework/social/connect/jdbc/JdbcConnectionRepository.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-57">
@@ -1434,7 +1332,163 @@
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/social/spring-social-core/1.1.6.RELEASE/spring-social-core-1.1.6.RELEASE.jar!/org/springframework/social/connect/ConnectionRepository.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="11" column="50" lean-forward="true" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/security-browser/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/security-demo/src/main/java/com/tucker/securitydemo/controller/MyConnectController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.0.8.RELEASE/spring-boot-autoconfigure-2.0.8.RELEASE.jar!/org/springframework/boot/autoconfigure/session/SessionRepositoryFilterConfiguration.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="27" column="62" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/security-core/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/security-core/src/main/resources/application-core.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/security-core/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="61" column="54" selection-start-line="61" selection-start-column="54" selection-end-line="61" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/security-browser/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/security-browser/src/main/resources/application-browser.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/security-browser/src/main/java/com/tucker/securitybrowser/controller/BrowserSecurityController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="71" column="51" selection-start-line="71" selection-start-column="51" selection-end-line="71" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/5.0.11.RELEASE/spring-security-config-5.0.11.RELEASE.jar!/org/springframework/security/config/annotation/web/configurers/SessionManagementConfigurer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
+          <folding>
+            <element signature="e#17444#17445#0" expanded="true" />
+            <element signature="e#17507#17508#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/security-demo/src/main/java/com/tucker/securitydemo/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/security-browser/src/main/java/com/tucker/securitybrowser/config/BrowserSecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="61" column="13" lean-forward="true" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/properties/ImageCodeProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/properties/SmsCodeProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="32" lean-forward="true" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/validate/ValidateCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="14" column="50" lean-forward="true" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/validate/ValidateCodeGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/properties/ValidateCodeProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/security-core/src/main/java/com/tucker/securitycore/validate/imp/AbstractValidateCodeProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="76" column="21" lean-forward="true" selection-start-line="76" selection-start-column="21" selection-end-line="76" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/security-demo/src/main/java/com/tucker/securitydemo/controller/TestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="16" column="26" lean-forward="true" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/security-browser/src/main/java/com/tucker/securitybrowser/session/TuckerExpiredSessionStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="43" lean-forward="true" selection-start-column="43" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/security-demo/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="11" lean-forward="true" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
         </state>
       </provider>
     </entry>

@@ -2,7 +2,8 @@ spring:
   profiles: browser
 
   session:
-    store-type: none
+    store-type: REDIS
+    timeout: 600
 
 tucker:
    security:

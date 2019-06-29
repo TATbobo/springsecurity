@@ -15,7 +15,6 @@ public class TestController {
     public User getUser(){
         User user = new User();
         user.setName("a");
-        System.out.println(user);
         return user;
     }
     /*@PostMapping

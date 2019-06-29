@@ -1,6 +1,7 @@
 package com.tucker.securitybrowser.config;
 
 import com.tucker.securitybrowser.authentication.TuckerLogoutSuccessHandler;
+import com.tucker.securitybrowser.session.TuckerExpiredSessionStrategy;
 import com.tucker.securitycore.authentication.AbstractChannelSecurityConfig;
 import com.tucker.securitycore.authentication.mobile.SmsCodeAuthenticationSecurityConfig;
 import com.tucker.securitycore.properties.SecurityConstants;
@@ -69,6 +70,12 @@ class BrowserSecurityConfig extends AbstractChannelSecurityConfig {
                 .and()
                 .apply(springSocialConfigurer)
                 .and()
+                .sessionManagement()
+                .invalidSessionUrl("/session/invalid")
+                .maximumSessions(1)
+                .expiredSessionStrategy(new TuckerExpiredSessionStrategy())
+                .and()
+                .and()
                 .rememberMe()
                 .tokenRepository(persistentTokenRepository())
                 .tokenValiditySeconds(securityProperties.getBrowser().getRememberMeSeconds())
@@ -88,7 +95,8 @@ class BrowserSecurityConfig extends AbstractChannelSecurityConfig {
                         SecurityConstants.DEFAULT_LOGOUT_URL,
                         securityProperties.getBrowser().getLogoutPage(),
                         securityProperties.getBrowser().getSignUpUrl(),
-                        "/user/register"
+                        "/user/register",
+                        "/session/invalid"
                                 )
                 .permitAll()
                 .anyRequest()

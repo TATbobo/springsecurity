@@ -1,6 +1,10 @@
 spring:
   profiles: core
 
+  redis:
+    host: 188.131.254.195
+    port: 6379
+
 tucker:
   security:
     code:

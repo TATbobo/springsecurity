@@ -2,6 +2,8 @@ package com.tucker.securitycore.properties;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
 public class SmsCodeProperties {
 
