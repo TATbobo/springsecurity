@@ -1,6 +1,5 @@
 package com.tucker.securitybrowser.config;
 
-import com.tucker.securitybrowser.authentication.TuckerLogoutSuccessHandler;
 import com.tucker.securitybrowser.session.TuckerExpiredSessionStrategy;
 import com.tucker.securitycore.authentication.AbstractChannelSecurityConfig;
 import com.tucker.securitycore.authentication.mobile.SmsCodeAuthenticationSecurityConfig;
@@ -13,8 +12,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 import org.springframework.social.security.SpringSocialConfigurer;
@@ -35,7 +33,7 @@ class BrowserSecurityConfig extends AbstractChannelSecurityConfig {
     private UserDetailsService userDetailsService;
 
     @Autowired
-    private TuckerLogoutSuccessHandler logoutSuccessHandler;
+    private LogoutSuccessHandler logoutSuccessHandler;
 
     @Autowired
     private ValidateCodeSecurityConfig validateCodeSecurityConfig;
@@ -45,11 +43,6 @@ class BrowserSecurityConfig extends AbstractChannelSecurityConfig {
 
     @Autowired
     private SpringSocialConfigurer springSocialConfigurer;
-
-    @Bean
-    public PasswordEncoder passwordEncoder(){
-        return new BCryptPasswordEncoder();
-    }
 
     @Bean
     public PersistentTokenRepository persistentTokenRepository(){

@@ -1,9 +1,9 @@
 package com.tucker.securitybrowser.controller;
 
-import com.tucker.securitybrowser.support.SimpleResponse;
 import com.tucker.securitybrowser.support.SocialUserInfo;
 import com.tucker.securitycore.properties.SecurityConstants;
 import com.tucker.securitycore.properties.SecurityProperties;
+import com.tucker.securitycore.support.SimpleResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

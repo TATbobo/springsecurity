@@ -23,7 +23,7 @@
 
         <dependency>
             <groupId>com.tucker</groupId>
-            <artifactId>security-browser</artifactId>
+            <artifactId>security-app</artifactId>
             <version>${tucker.security.version}</version>
         </dependency>
 

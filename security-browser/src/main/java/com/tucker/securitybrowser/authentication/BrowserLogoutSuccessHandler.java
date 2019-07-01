@@ -1,8 +1,8 @@
 package com.tucker.securitybrowser.authentication;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.tucker.securitybrowser.support.SimpleResponse;
 import com.tucker.securitycore.properties.SecurityProperties;
+import com.tucker.securitycore.support.SimpleResponse;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,14 +17,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Component("logoutSuccessHandler")
-public class TuckerLogoutSuccessHandler implements LogoutSuccessHandler {
+public class BrowserLogoutSuccessHandler implements LogoutSuccessHandler {
 
     @Autowired
     private SecurityProperties securityProperties;
 
     private Logger logger = LoggerFactory.getLogger(getClass());
 
-    public TuckerLogoutSuccessHandler(SecurityProperties securityProperties){
+    public BrowserLogoutSuccessHandler(SecurityProperties securityProperties){
         this.logoutUrl = securityProperties.getBrowser().getLogoutPage();
     }
 

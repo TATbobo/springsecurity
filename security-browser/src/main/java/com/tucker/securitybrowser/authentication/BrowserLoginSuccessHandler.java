@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Component("loginSuccessHandler")
-public class LoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler {
+public class BrowserLoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler {
 
     private Logger logger = LoggerFactory.getLogger(getClass());
 

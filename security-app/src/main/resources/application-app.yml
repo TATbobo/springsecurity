@@ -1,0 +1,10 @@
+spring:
+  profiles: app
+
+security:
+  oauth2:
+    client:
+      client-id: tucker
+      client-secret: tuckersecret
+      registered-redirect-uri: http://example.com
+

@@ -1,9 +1,9 @@
-package com.tucker.securitybrowser.authentication;
+package com.tucker.securityapp.authentication;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.tucker.securitybrowser.support.SimpleResponse;
 import com.tucker.securitycore.properties.LoginType;
 import com.tucker.securitycore.properties.SecurityProperties;
+import com.tucker.securitycore.support.SimpleResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Component("loginFailHandler")
-public class LoginFailHandler extends SimpleUrlAuthenticationFailureHandler {
-
+public class AppLoginFailureHandler extends SimpleUrlAuthenticationFailureHandler {
     private Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired
