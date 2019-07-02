@@ -1,6 +1,8 @@
 spring:
   profiles:
-    active: core,app
+    include:
+      - core
+      - app
 
   datasource:
     username: root
@@ -10,3 +12,4 @@ spring:
 
 server:
   port: 8081
+
