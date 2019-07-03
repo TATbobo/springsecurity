@@ -44,8 +44,8 @@ public class TuckerResourceServerConfig extends ResourceServerConfigurerAdapter 
                 .successHandler(loginSuccessHandler)
                 .failureHandler(loginFailHandler);
 
-        http.apply(validateCodeSecurityConfig)
-                .and()
+        http/*.apply(validateCodeSecurityConfig)
+                .and()*/
                 .apply(smsCodeAuthenticationSecurityConfig)
                 .and()
                 .apply(springSocialConfigurer)
