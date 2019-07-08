@@ -39,7 +39,7 @@ public class TuckerResourceServerConfig extends ResourceServerConfigurerAdapter 
     public void configure(HttpSecurity http) throws Exception {
 
         http.formLogin()
-                .loginPage(SecurityConstants.DEFAULT_UNAUTHENTICATION_URL).usernameParameter("Username").passwordParameter("Password")
+                .loginPage(SecurityConstants.DEFAULT_UNAUTHENTICATION_URL)/*.usernameParameter("Username").passwordParameter("Password")*/
                 .loginProcessingUrl(SecurityConstants.DEFAULT_LOGIN_PROCESSING_URL_FORM)
                 .successHandler(loginSuccessHandler)
                 .failureHandler(loginFailHandler);

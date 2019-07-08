@@ -1,10 +1,7 @@
 package com.tucker.securitycore.validate.imp;
 
 import com.tucker.securitycore.exception.ValidateCodeException;
-import com.tucker.securitycore.validate.ValidateCode;
-import com.tucker.securitycore.validate.ValidateCodeGenerator;
-import com.tucker.securitycore.validate.ValidateCodeProcessor;
-import com.tucker.securitycore.validate.ValidateCodeType;
+import com.tucker.securitycore.validate.*;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,6 +25,9 @@ public abstract class AbstractValidateCodeProcessor<C extends ValidateCode> impl
      */
     @Autowired
     private Map<String, ValidateCodeGenerator> validateCodeGenerators;
+
+    @Autowired
+    ValidateCodeRepository validateCodeRepository;
 
     /*
      * (non-Javadoc)
@@ -68,7 +68,7 @@ public abstract class AbstractValidateCodeProcessor<C extends ValidateCode> impl
      */
     private void save(ServletWebRequest request, C validateCode) {
         ValidateCode code = new ValidateCode(validateCode.getCode(),validateCode.getExpireTime());
-        sessionStrategy.setAttribute(request, getSessionKey(request), code);
+        validateCodeRepository.save(request,code,getValidateCodeType(request));
     }
 
     /**
@@ -105,38 +105,37 @@ public abstract class AbstractValidateCodeProcessor<C extends ValidateCode> impl
     @Override
     public void validate(ServletWebRequest request) {
         Logger logger = LoggerFactory.getLogger(getClass());
-        ValidateCodeType processorType = getValidateCodeType(request);
-        String sessionKey = getSessionKey(request);
+        ValidateCodeType codeType = getValidateCodeType(request);
 
-        C codeInSession = (C) sessionStrategy.getAttribute(request, sessionKey);
+        C codeInSession = (C) validateCodeRepository.get(request, codeType);
 
         String codeInRequest;
         try {
             codeInRequest = ServletRequestUtils.getStringParameter(request.getRequest(),
-                    processorType.getParamNameOnValidate());
+                    codeType.getParamNameOnValidate());
         } catch (ServletRequestBindingException e) {
             throw new ValidateCodeException("获取验证码的值失败");
         }
 
         if (StringUtils.isBlank(codeInRequest)) {
             logger.info("验证码的值不能为空");
-            throw new ValidateCodeException(processorType + "验证码的值不能为空");
+            throw new ValidateCodeException(codeType + "验证码的值不能为空");
         }
 
         if (codeInSession == null) {
-            throw new ValidateCodeException(processorType + "验证码不存在");
+            throw new ValidateCodeException(codeType + "验证码不存在");
         }
 
         if (codeInSession.isExpired()) {
-            sessionStrategy.removeAttribute(request, sessionKey);
-            throw new ValidateCodeException(processorType + "验证码已过期");
+            validateCodeRepository.remove(request,getValidateCodeType(request));
+            throw new ValidateCodeException(codeType + "验证码已过期");
         }
 
         if (!StringUtils.equals(codeInSession.getCode(), codeInRequest)) {
-            throw new ValidateCodeException(processorType + "验证码不匹配");
+            throw new ValidateCodeException(codeType + "验证码不匹配");
         }
 
-        sessionStrategy.removeAttribute(request, sessionKey);
+        validateCodeRepository.remove(request,getValidateCodeType(request));
     }
 
 }

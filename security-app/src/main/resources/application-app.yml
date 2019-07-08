@@ -1,10 +1,14 @@
 spring:
   profiles: app
-
-security:
-  oauth2:
-    client:
-      client-id: tucker
-      client-secret: tuckersecret
-      registered-redirect-uri: http://example.com
-
+tucker:
+  security:
+     oauth2:
+        clients[0]:
+          clientId: tucker
+          clientSecret: tucker
+          accessTokenValiditySeconds: 3600
+        clients[1]:
+          clientId: bobo
+          clientSecret: bobo
+          #accessTokenValiditySeconds: 7200
+        jwtSigningKey: tucker

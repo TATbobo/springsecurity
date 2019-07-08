@@ -4,6 +4,13 @@ spring:
   redis:
     host: 188.131.254.195
     port: 6379
+    timeout: 1000
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        max-wait: 100
 
 tucker:
   security:
@@ -12,12 +19,20 @@ tucker:
         length: 5
         expireIn: 61
         url: /test
-  social:
-    qq:
-      app-id:
-      app-secret:
-      providerId: /callback.do
-    weiChat:
-      app-id:
-      app-secret:
-    filterProcessesUrl: /qqLogin
+    social:
+      qq:
+        app-id:
+        app-secret:
+        providerId: /callback.do
+      weiChat:
+        app-id:
+        app-secret:
+      filterProcessesUrl: /qqLogin
+
+
+
+
+
+
+
+
