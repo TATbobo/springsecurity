@@ -11,12 +11,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class SecurityAppApplicationTests {
 
-    @Autowired
-    private SecurityProperties securityProperties;
 
     @Test
     public void contextLoads() {
-        System.out.println(securityProperties.getCode().getSms().getLength());
+
     }
 
 }

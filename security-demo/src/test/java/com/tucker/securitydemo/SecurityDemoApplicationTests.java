@@ -30,6 +30,12 @@ public class SecurityDemoApplicationTests {
     }
 
     @Test
+    public void contextLoads() {
+        int x = 5;
+        System.out.println((long)x * 1000L);
+    }
+
+    @Test
     public void getMessageSuccess() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/user")
                 .contentType(MediaType.APPLICATION_JSON_UTF8))

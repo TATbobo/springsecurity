@@ -6,6 +6,7 @@ import org.apache.commons.lang.ArrayUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -20,6 +21,7 @@ import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -80,7 +82,7 @@ public class TuckerAuthorizationServerConfig extends AuthorizationServerConfigur
             enhancerChain.setTokenEnhancers(enhancers);
 
             endpoints.tokenEnhancer(enhancerChain)
-                    .accessTokenConverter(jwtAccessTokenConverter);
+            .accessTokenConverter(jwtAccessTokenConverter);
         }
     }
 
